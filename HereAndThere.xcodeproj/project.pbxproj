@@ -1,0 +1,896 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		216D49BAE23E563191233924 /* Pods_HereAndThereTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83EA66C8DBFFFEE861A36F8 /* Pods_HereAndThereTests.framework */; };
+		38AB0ECCCE9A5F225BBDC612 /* Pods_HereAndThere.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9332293DB6CCA692B2AACC9E /* Pods_HereAndThere.framework */; };
+		A3EA6E493DCCAD92C6D8D5E9 /* Pods_HereAndThere_HereAndThereUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B452F0D255F8E9995BDD6F3C /* Pods_HereAndThere_HereAndThereUITests.framework */; };
+		FC1BE00D2780C01C00953BDD /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE0082780C01C00953BDD /* Comfortaa-Medium.ttf */; };
+		FC1BE00E2780C01C00953BDD /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE0082780C01C00953BDD /* Comfortaa-Medium.ttf */; };
+		FC1BE00F2780C01C00953BDD /* Comfortaa-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE0082780C01C00953BDD /* Comfortaa-Medium.ttf */; };
+		FC1BE0102780C01C00953BDD /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE0092780C01C00953BDD /* Comfortaa-Bold.ttf */; };
+		FC1BE0112780C01C00953BDD /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE0092780C01C00953BDD /* Comfortaa-Bold.ttf */; };
+		FC1BE0122780C01C00953BDD /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE0092780C01C00953BDD /* Comfortaa-Bold.ttf */; };
+		FC1BE0132780C01C00953BDD /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00A2780C01C00953BDD /* Comfortaa-Light.ttf */; };
+		FC1BE0142780C01C00953BDD /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00A2780C01C00953BDD /* Comfortaa-Light.ttf */; };
+		FC1BE0152780C01C00953BDD /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00A2780C01C00953BDD /* Comfortaa-Light.ttf */; };
+		FC1BE0162780C01C00953BDD /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00B2780C01C00953BDD /* Comfortaa-Regular.ttf */; };
+		FC1BE0172780C01C00953BDD /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00B2780C01C00953BDD /* Comfortaa-Regular.ttf */; };
+		FC1BE0182780C01C00953BDD /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00B2780C01C00953BDD /* Comfortaa-Regular.ttf */; };
+		FC1BE0192780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00C2780C01C00953BDD /* Comfortaa-SemiBold.ttf */; };
+		FC1BE01A2780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00C2780C01C00953BDD /* Comfortaa-SemiBold.ttf */; };
+		FC1BE01B2780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00C2780C01C00953BDD /* Comfortaa-SemiBold.ttf */; };
+		FCA8E52527808EF900530693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8E52427808EF900530693 /* AppDelegate.swift */; };
+		FCA8E52727808EF900530693 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8E52627808EF900530693 /* SceneDelegate.swift */; };
+		FCA8E52927808EF900530693 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8E52827808EF900530693 /* ViewController.swift */; };
+		FCA8E52C27808EF900530693 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA8E52A27808EF900530693 /* Main.storyboard */; };
+		FCA8E52F27808EF900530693 /* HereAndThere.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FCA8E52D27808EF900530693 /* HereAndThere.xcdatamodeld */; };
+		FCA8E53127808EFB00530693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA8E53027808EFB00530693 /* Assets.xcassets */; };
+		FCA8E53427808EFB00530693 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA8E53227808EFB00530693 /* LaunchScreen.storyboard */; };
+		FCA8E53F27808EFB00530693 /* HereAndThereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8E53E27808EFB00530693 /* HereAndThereTests.swift */; };
+		FCA8E54927808EFB00530693 /* HereAndThereUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8E54827808EFB00530693 /* HereAndThereUITests.swift */; };
+		FCA8E54B27808EFB00530693 /* HereAndThereUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8E54A27808EFB00530693 /* HereAndThereUITestsLaunchTests.swift */; };
+		FCAC7AD32780C23A00092371 /* LoginRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC7AD22780C23A00092371 /* LoginRegisterViewController.swift */; };
+		FCAC7AD52780C25600092371 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC7AD42780C25600092371 /* LoginViewController.swift */; };
+		FCAC7AD72780C28000092371 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCAC7AD62780C28000092371 /* RegisterViewController.swift */; };
+		FCAC7AD92780CA8E00092371 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCAC7AD82780CA8E00092371 /* GoogleService-Info.plist */; };
+		FCAC7ADA2780CA8E00092371 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCAC7AD82780CA8E00092371 /* GoogleService-Info.plist */; };
+		FCAC7ADB2780CA8E00092371 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FCAC7AD82780CA8E00092371 /* GoogleService-Info.plist */; };
+		FCB8E9702780EAAC0040B280 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8E96F2780EAAC0040B280 /* Utilities.swift */; };
+		FCB8E9742780F91E0040B280 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8E9732780F91E0040B280 /* ContactsViewController.swift */; };
+		FCB8E977278100210040B280 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8E976278100210040B280 /* User.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FCA8E53B27808EFB00530693 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCA8E51927808EF900530693 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA8E52027808EF900530693;
+			remoteInfo = HereAndThere;
+		};
+		FCA8E54527808EFB00530693 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCA8E51927808EF900530693 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA8E52027808EF900530693;
+			remoteInfo = HereAndThere;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2B4EC24BF782FFAB61C9D375 /* Pods-HereAndThereTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HereAndThereTests.debug.xcconfig"; path = "Target Support Files/Pods-HereAndThereTests/Pods-HereAndThereTests.debug.xcconfig"; sourceTree = "<group>"; };
+		30C3B1C6B1B166DB4AB88AA1 /* Pods-HereAndThere-HereAndThereUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HereAndThere-HereAndThereUITests.debug.xcconfig"; path = "Target Support Files/Pods-HereAndThere-HereAndThereUITests/Pods-HereAndThere-HereAndThereUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D6E795072904D2BA888551B /* Pods-HereAndThere-HereAndThereUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HereAndThere-HereAndThereUITests.release.xcconfig"; path = "Target Support Files/Pods-HereAndThere-HereAndThereUITests/Pods-HereAndThere-HereAndThereUITests.release.xcconfig"; sourceTree = "<group>"; };
+		73940297F4F4BD77678C74F5 /* Pods-HereAndThere.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HereAndThere.debug.xcconfig"; path = "Target Support Files/Pods-HereAndThere/Pods-HereAndThere.debug.xcconfig"; sourceTree = "<group>"; };
+		9332293DB6CCA692B2AACC9E /* Pods_HereAndThere.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HereAndThere.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B452F0D255F8E9995BDD6F3C /* Pods_HereAndThere_HereAndThereUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HereAndThere_HereAndThereUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFCB362A4CB766EF56B299CE /* Pods-HereAndThereTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HereAndThereTests.release.xcconfig"; path = "Target Support Files/Pods-HereAndThereTests/Pods-HereAndThereTests.release.xcconfig"; sourceTree = "<group>"; };
+		D83EA66C8DBFFFEE861A36F8 /* Pods_HereAndThereTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HereAndThereTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9751C02B4005063C7A6F0BE /* Pods-HereAndThere.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HereAndThere.release.xcconfig"; path = "Target Support Files/Pods-HereAndThere/Pods-HereAndThere.release.xcconfig"; sourceTree = "<group>"; };
+		FC1BE0082780C01C00953BDD /* Comfortaa-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Medium.ttf"; sourceTree = "<group>"; };
+		FC1BE0092780C01C00953BDD /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		FC1BE00A2780C01C00953BDD /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		FC1BE00B2780C01C00953BDD /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		FC1BE00C2780C01C00953BDD /* Comfortaa-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-SemiBold.ttf"; sourceTree = "<group>"; };
+		FCA8E52127808EF900530693 /* HereAndThere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HereAndThere.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA8E52427808EF900530693 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FCA8E52627808EF900530693 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FCA8E52827808EF900530693 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FCA8E52B27808EF900530693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FCA8E52E27808EF900530693 /* HereAndThere.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HereAndThere.xcdatamodel; sourceTree = "<group>"; };
+		FCA8E53027808EFB00530693 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FCA8E53327808EFB00530693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FCA8E53527808EFB00530693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA8E53A27808EFB00530693 /* HereAndThereTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HereAndThereTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA8E53E27808EFB00530693 /* HereAndThereTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereAndThereTests.swift; sourceTree = "<group>"; };
+		FCA8E54427808EFB00530693 /* HereAndThereUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HereAndThereUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA8E54827808EFB00530693 /* HereAndThereUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereAndThereUITests.swift; sourceTree = "<group>"; };
+		FCA8E54A27808EFB00530693 /* HereAndThereUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HereAndThereUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FCAC7AD22780C23A00092371 /* LoginRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRegisterViewController.swift; sourceTree = "<group>"; };
+		FCAC7AD42780C25600092371 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FCAC7AD62780C28000092371 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FCAC7AD82780CA8E00092371 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FCB8E96F2780EAAC0040B280 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		FCB8E9732780F91E0040B280 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		FCB8E976278100210040B280 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FCA8E51E27808EF900530693 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38AB0ECCCE9A5F225BBDC612 /* Pods_HereAndThere.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA8E53727808EFB00530693 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				216D49BAE23E563191233924 /* Pods_HereAndThereTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA8E54127808EFB00530693 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A3EA6E493DCCAD92C6D8D5E9 /* Pods_HereAndThere_HereAndThereUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B2EFB71A292C5D7AF14BB493 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				73940297F4F4BD77678C74F5 /* Pods-HereAndThere.debug.xcconfig */,
+				F9751C02B4005063C7A6F0BE /* Pods-HereAndThere.release.xcconfig */,
+				30C3B1C6B1B166DB4AB88AA1 /* Pods-HereAndThere-HereAndThereUITests.debug.xcconfig */,
+				5D6E795072904D2BA888551B /* Pods-HereAndThere-HereAndThereUITests.release.xcconfig */,
+				2B4EC24BF782FFAB61C9D375 /* Pods-HereAndThereTests.debug.xcconfig */,
+				BFCB362A4CB766EF56B299CE /* Pods-HereAndThereTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EEB796908C426E2793626FE2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9332293DB6CCA692B2AACC9E /* Pods_HereAndThere.framework */,
+				B452F0D255F8E9995BDD6F3C /* Pods_HereAndThere_HereAndThereUITests.framework */,
+				D83EA66C8DBFFFEE861A36F8 /* Pods_HereAndThereTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC1BE0072780C00200953BDD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FC1BE0092780C01C00953BDD /* Comfortaa-Bold.ttf */,
+				FC1BE00A2780C01C00953BDD /* Comfortaa-Light.ttf */,
+				FC1BE0082780C01C00953BDD /* Comfortaa-Medium.ttf */,
+				FC1BE00B2780C01C00953BDD /* Comfortaa-Regular.ttf */,
+				FC1BE00C2780C01C00953BDD /* Comfortaa-SemiBold.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FCA8E51827808EF900530693 = {
+			isa = PBXGroup;
+			children = (
+				FCA8E52327808EF900530693 /* HereAndThere */,
+				FCA8E53D27808EFB00530693 /* HereAndThereTests */,
+				FCA8E54727808EFB00530693 /* HereAndThereUITests */,
+				FCA8E52227808EF900530693 /* Products */,
+				B2EFB71A292C5D7AF14BB493 /* Pods */,
+				EEB796908C426E2793626FE2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FCA8E52227808EF900530693 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FCA8E52127808EF900530693 /* HereAndThere.app */,
+				FCA8E53A27808EFB00530693 /* HereAndThereTests.xctest */,
+				FCA8E54427808EFB00530693 /* HereAndThereUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FCA8E52327808EF900530693 /* HereAndThere */ = {
+			isa = PBXGroup;
+			children = (
+				FC1BE0072780C00200953BDD /* Fonts */,
+				FCA8E557278095C400530693 /* Controllers */,
+				FCB8E975278100120040B280 /* Model */,
+				FCA8E52427808EF900530693 /* AppDelegate.swift */,
+				FCA8E52627808EF900530693 /* SceneDelegate.swift */,
+				FCA8E52A27808EF900530693 /* Main.storyboard */,
+				FCA8E53027808EFB00530693 /* Assets.xcassets */,
+				FCA8E53227808EFB00530693 /* LaunchScreen.storyboard */,
+				FCA8E53527808EFB00530693 /* Info.plist */,
+				FCAC7AD82780CA8E00092371 /* GoogleService-Info.plist */,
+				FCA8E52D27808EF900530693 /* HereAndThere.xcdatamodeld */,
+				FCB8E96F2780EAAC0040B280 /* Utilities.swift */,
+			);
+			path = HereAndThere;
+			sourceTree = "<group>";
+		};
+		FCA8E53D27808EFB00530693 /* HereAndThereTests */ = {
+			isa = PBXGroup;
+			children = (
+				FCA8E53E27808EFB00530693 /* HereAndThereTests.swift */,
+			);
+			path = HereAndThereTests;
+			sourceTree = "<group>";
+		};
+		FCA8E54727808EFB00530693 /* HereAndThereUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FCA8E54827808EFB00530693 /* HereAndThereUITests.swift */,
+				FCA8E54A27808EFB00530693 /* HereAndThereUITestsLaunchTests.swift */,
+			);
+			path = HereAndThereUITests;
+			sourceTree = "<group>";
+		};
+		FCA8E557278095C400530693 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCA8E52827808EF900530693 /* ViewController.swift */,
+				FCAC7AD22780C23A00092371 /* LoginRegisterViewController.swift */,
+				FCAC7AD42780C25600092371 /* LoginViewController.swift */,
+				FCAC7AD62780C28000092371 /* RegisterViewController.swift */,
+				FCB8E9732780F91E0040B280 /* ContactsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FCB8E975278100120040B280 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FCB8E976278100210040B280 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FCA8E52027808EF900530693 /* HereAndThere */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA8E54E27808EFB00530693 /* Build configuration list for PBXNativeTarget "HereAndThere" */;
+			buildPhases = (
+				59F002012E3609BDBD8155F9 /* [CP] Check Pods Manifest.lock */,
+				FCA8E51D27808EF900530693 /* Sources */,
+				FCA8E51E27808EF900530693 /* Frameworks */,
+				FCA8E51F27808EF900530693 /* Resources */,
+				EBBFC165EBC0FAE377C1484D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HereAndThere;
+			productName = HereAndThere;
+			productReference = FCA8E52127808EF900530693 /* HereAndThere.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FCA8E53927808EFB00530693 /* HereAndThereTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA8E55127808EFB00530693 /* Build configuration list for PBXNativeTarget "HereAndThereTests" */;
+			buildPhases = (
+				EF1EBC403F017831A0BB60E3 /* [CP] Check Pods Manifest.lock */,
+				FCA8E53627808EFB00530693 /* Sources */,
+				FCA8E53727808EFB00530693 /* Frameworks */,
+				FCA8E53827808EFB00530693 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCA8E53C27808EFB00530693 /* PBXTargetDependency */,
+			);
+			name = HereAndThereTests;
+			productName = HereAndThereTests;
+			productReference = FCA8E53A27808EFB00530693 /* HereAndThereTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FCA8E54327808EFB00530693 /* HereAndThereUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA8E55427808EFB00530693 /* Build configuration list for PBXNativeTarget "HereAndThereUITests" */;
+			buildPhases = (
+				9095F68B8A8762FE4ABF4239 /* [CP] Check Pods Manifest.lock */,
+				FCA8E54027808EFB00530693 /* Sources */,
+				FCA8E54127808EFB00530693 /* Frameworks */,
+				FCA8E54227808EFB00530693 /* Resources */,
+				66162E539CFF8B1D8937C3A7 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCA8E54627808EFB00530693 /* PBXTargetDependency */,
+			);
+			name = HereAndThereUITests;
+			productName = HereAndThereUITests;
+			productReference = FCA8E54427808EFB00530693 /* HereAndThereUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FCA8E51927808EF900530693 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					FCA8E52027808EF900530693 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					FCA8E53927808EFB00530693 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = FCA8E52027808EF900530693;
+					};
+					FCA8E54327808EFB00530693 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = FCA8E52027808EF900530693;
+					};
+				};
+			};
+			buildConfigurationList = FCA8E51C27808EF900530693 /* Build configuration list for PBXProject "HereAndThere" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FCA8E51827808EF900530693;
+			productRefGroup = FCA8E52227808EF900530693 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FCA8E52027808EF900530693 /* HereAndThere */,
+				FCA8E53927808EFB00530693 /* HereAndThereTests */,
+				FCA8E54327808EFB00530693 /* HereAndThereUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FCA8E51F27808EF900530693 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA8E53427808EFB00530693 /* LaunchScreen.storyboard in Resources */,
+				FCA8E53127808EFB00530693 /* Assets.xcassets in Resources */,
+				FCAC7AD92780CA8E00092371 /* GoogleService-Info.plist in Resources */,
+				FC1BE0192780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */,
+				FC1BE0102780C01C00953BDD /* Comfortaa-Bold.ttf in Resources */,
+				FC1BE0162780C01C00953BDD /* Comfortaa-Regular.ttf in Resources */,
+				FC1BE00D2780C01C00953BDD /* Comfortaa-Medium.ttf in Resources */,
+				FC1BE0132780C01C00953BDD /* Comfortaa-Light.ttf in Resources */,
+				FCA8E52C27808EF900530693 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA8E53827808EFB00530693 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC1BE01A2780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */,
+				FC1BE0172780C01C00953BDD /* Comfortaa-Regular.ttf in Resources */,
+				FC1BE0112780C01C00953BDD /* Comfortaa-Bold.ttf in Resources */,
+				FC1BE0142780C01C00953BDD /* Comfortaa-Light.ttf in Resources */,
+				FC1BE00E2780C01C00953BDD /* Comfortaa-Medium.ttf in Resources */,
+				FCAC7ADA2780CA8E00092371 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA8E54227808EFB00530693 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC1BE01B2780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */,
+				FC1BE0182780C01C00953BDD /* Comfortaa-Regular.ttf in Resources */,
+				FC1BE0122780C01C00953BDD /* Comfortaa-Bold.ttf in Resources */,
+				FC1BE0152780C01C00953BDD /* Comfortaa-Light.ttf in Resources */,
+				FC1BE00F2780C01C00953BDD /* Comfortaa-Medium.ttf in Resources */,
+				FCAC7ADB2780CA8E00092371 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		59F002012E3609BDBD8155F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HereAndThere-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		66162E539CFF8B1D8937C3A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HereAndThere-HereAndThereUITests/Pods-HereAndThere-HereAndThereUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HereAndThere-HereAndThereUITests/Pods-HereAndThere-HereAndThereUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HereAndThere-HereAndThereUITests/Pods-HereAndThere-HereAndThereUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9095F68B8A8762FE4ABF4239 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HereAndThere-HereAndThereUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EBBFC165EBC0FAE377C1484D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HereAndThere/Pods-HereAndThere-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HereAndThere/Pods-HereAndThere-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HereAndThere/Pods-HereAndThere-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF1EBC403F017831A0BB60E3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HereAndThereTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FCA8E51D27808EF900530693 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCAC7AD52780C25600092371 /* LoginViewController.swift in Sources */,
+				FCA8E52F27808EF900530693 /* HereAndThere.xcdatamodeld in Sources */,
+				FCAC7AD72780C28000092371 /* RegisterViewController.swift in Sources */,
+				FCA8E52927808EF900530693 /* ViewController.swift in Sources */,
+				FCA8E52527808EF900530693 /* AppDelegate.swift in Sources */,
+				FCB8E9702780EAAC0040B280 /* Utilities.swift in Sources */,
+				FCAC7AD32780C23A00092371 /* LoginRegisterViewController.swift in Sources */,
+				FCA8E52727808EF900530693 /* SceneDelegate.swift in Sources */,
+				FCB8E977278100210040B280 /* User.swift in Sources */,
+				FCB8E9742780F91E0040B280 /* ContactsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA8E53627808EFB00530693 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA8E53F27808EFB00530693 /* HereAndThereTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA8E54027808EFB00530693 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA8E54927808EFB00530693 /* HereAndThereUITests.swift in Sources */,
+				FCA8E54B27808EFB00530693 /* HereAndThereUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FCA8E53C27808EFB00530693 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA8E52027808EF900530693 /* HereAndThere */;
+			targetProxy = FCA8E53B27808EFB00530693 /* PBXContainerItemProxy */;
+		};
+		FCA8E54627808EFB00530693 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA8E52027808EF900530693 /* HereAndThere */;
+			targetProxy = FCA8E54527808EFB00530693 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FCA8E52A27808EF900530693 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCA8E52B27808EF900530693 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FCA8E53227808EFB00530693 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCA8E53327808EFB00530693 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FCA8E54C27808EFB00530693 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FCA8E54D27808EFB00530693 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FCA8E54F27808EFB00530693 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73940297F4F4BD77678C74F5 /* Pods-HereAndThere.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = THU336WA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HereAndThere/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ShahadAlhanaya2021.HereAndThere;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FCA8E55027808EFB00530693 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F9751C02B4005063C7A6F0BE /* Pods-HereAndThere.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = THU336WA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HereAndThere/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ShahadAlhanaya2021.HereAndThere;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FCA8E55227808EFB00530693 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B4EC24BF782FFAB61C9D375 /* Pods-HereAndThereTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = THU336WA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ShahadAlhanaya2021.HereAndThereTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HereAndThere.app/HereAndThere";
+			};
+			name = Debug;
+		};
+		FCA8E55327808EFB00530693 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFCB362A4CB766EF56B299CE /* Pods-HereAndThereTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = THU336WA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ShahadAlhanaya2021.HereAndThereTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HereAndThere.app/HereAndThere";
+			};
+			name = Release;
+		};
+		FCA8E55527808EFB00530693 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 30C3B1C6B1B166DB4AB88AA1 /* Pods-HereAndThere-HereAndThereUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = THU336WA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ShahadAlhanaya2021.HereAndThereUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HereAndThere;
+			};
+			name = Debug;
+		};
+		FCA8E55627808EFB00530693 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D6E795072904D2BA888551B /* Pods-HereAndThere-HereAndThereUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = THU336WA8H;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = ShahadAlhanaya2021.HereAndThereUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = HereAndThere;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FCA8E51C27808EF900530693 /* Build configuration list for PBXProject "HereAndThere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA8E54C27808EFB00530693 /* Debug */,
+				FCA8E54D27808EFB00530693 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCA8E54E27808EFB00530693 /* Build configuration list for PBXNativeTarget "HereAndThere" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA8E54F27808EFB00530693 /* Debug */,
+				FCA8E55027808EFB00530693 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCA8E55127808EFB00530693 /* Build configuration list for PBXNativeTarget "HereAndThereTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA8E55227808EFB00530693 /* Debug */,
+				FCA8E55327808EFB00530693 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCA8E55427808EFB00530693 /* Build configuration list for PBXNativeTarget "HereAndThereUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA8E55527808EFB00530693 /* Debug */,
+				FCA8E55627808EFB00530693 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FCA8E52D27808EF900530693 /* HereAndThere.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FCA8E52E27808EF900530693 /* HereAndThere.xcdatamodel */,
+			);
+			currentVersion = FCA8E52E27808EF900530693 /* HereAndThere.xcdatamodel */;
+			path = HereAndThere.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FCA8E51927808EF900530693 /* Project object */;
+}
