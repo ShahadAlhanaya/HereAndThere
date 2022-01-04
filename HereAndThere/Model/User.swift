@@ -12,12 +12,14 @@ class User{
     var lastName: String
     var email: String
     var name: String
+    var image: String
     
-    init(id: String, firstName: String, lastName: String, email: String){
+    init(id: String, firstName: String, lastName: String, email: String, image: String){
         self.id = id
         self.firstName = firstName
         self.lastName = lastName
         self.email = email
         self.name = "\(firstName) \(lastName)"
+        self.image = image
     }
 }

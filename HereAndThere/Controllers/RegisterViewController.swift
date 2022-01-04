@@ -8,13 +8,16 @@
 import UIKit
 import Firebase
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var firstNameTextField: UITextField!
     @IBOutlet weak var lastNameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var errorLabel: UILabel!
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,12 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    @IBAction func profileImageButtonPressed(_ sender: UIButton) {
+        
+        presentPhotoActionSheet()
+    }
+    
+    
     func handleRegister(){
         
         let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -46,6 +55,8 @@ class RegisterViewController: UIViewController {
                 print("error \(error)")
                 return
             }
+    
+            
             guard let uid = result?.user.uid else { return }
             Firestore.firestore().collection("users").document(uid).setData([
                 "firstName": firstName,
@@ -57,6 +68,7 @@ class RegisterViewController: UIViewController {
                 } else {
                     print("user created")
                     self.dismissRegister()
+                    self.uploadUserImage(uid: uid, fileName: "\(uid)\(Date().timeIntervalSince1970)")
                 }
             }
         }
@@ -68,6 +80,30 @@ class RegisterViewController: UIViewController {
         let myNavigationController = UINavigationController(rootViewController: vc)
         myNavigationController.modalPresentationStyle = .fullScreen
         present(myNavigationController, animated: true)
+    }
+    
+    func uploadUserImage(uid: String, fileName: String){
+        var imageURL = ""
+        let storageRef = Storage.storage().reference().child("\(fileName).png")
+        if let uploadData = self.profileImageView.image?.jpegData(compressionQuality: 0.5){
+            storageRef.putData(uploadData, metadata: nil){
+                (metadata, error) in
+                if let error = error {
+                    print("error \(error)")
+                }else{
+                    storageRef.downloadURL { url, error in
+                        imageURL = url!.absoluteString
+                        Firestore.firestore().collection("users").document(uid).updateData([
+                            "image": imageURL,
+                        ]){ error in
+                            if let error = error {
+                                print("error: \(error)")
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     func validateFields()-> String?{
@@ -111,7 +147,32 @@ class RegisterViewController: UIViewController {
         textField.layer.masksToBounds = true
     }
 }
+extension RegisterViewController: UIImagePickerControllerDelegate {
+  
+    func presentPhotoActionSheet(){
+        print("hey!")
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        vc.modalPresentationStyle = .fullScreen
+        present(vc,animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print(info)
+        picker.dismiss(animated: true, completion: nil)
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {return}
+        self.profileImageView.image = selectedImage
+        
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
 
+}
 extension UITextField {
     func setLeftPaddingPoints(_ amount:CGFloat){
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))

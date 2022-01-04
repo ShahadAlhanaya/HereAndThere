@@ -7,10 +7,16 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class ViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userEmailLabel: UILabel!
+    @IBOutlet weak var userImageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +45,17 @@ class ViewController: UIViewController{
             Firestore.firestore().collection("users").document(uid!).getDocument { document, error in
                 if let document = document, document.exists {
                     let data = document.data()
-                    self.title = data?["firstName"] as? String ?? " "
+                    let firstName = data?["firstName"] as? String ?? " "
+                    let lastName = data?["lastName"] as? String ?? " "
+                    let email = data?["email"] as? String ?? " "
+                    let image = data?["image"] as? String ?? " "
+                    self.userNameLabel.text = "\(firstName) \(lastName)"
+                    self.userEmailLabel.text = email
+                    if image.trimmingCharacters(in: .whitespaces) != "" {
+                        self.userImageView.sd_setImage(with: URL(string: image))
+                    }
+                    print("noice")
+                    print(image)
                 } else {
                     print("Document does not exist")
                 }
@@ -80,7 +96,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = "hey"
         return cell
     }
-    
     
 }
 

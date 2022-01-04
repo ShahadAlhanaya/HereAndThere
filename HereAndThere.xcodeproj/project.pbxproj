@@ -44,6 +44,7 @@
 		FCB8E9702780EAAC0040B280 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8E96F2780EAAC0040B280 /* Utilities.swift */; };
 		FCB8E9742780F91E0040B280 /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8E9732780F91E0040B280 /* ContactsViewController.swift */; };
 		FCB8E977278100210040B280 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB8E976278100210040B280 /* User.swift */; };
+		FCB96D9827839E16004D69D5 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB96D9727839E16004D69D5 /* ContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		FCB8E96F2780EAAC0040B280 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		FCB8E9732780F91E0040B280 /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
 		FCB8E976278100210040B280 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FCB96D9727839E16004D69D5 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 		FCA8E52327808EF900530693 /* HereAndThere */ = {
 			isa = PBXGroup;
 			children = (
+				FCB96D9627839DE2004D69D5 /* Views */,
 				FC1BE0072780C00200953BDD /* Fonts */,
 				FCA8E557278095C400530693 /* Controllers */,
 				FCB8E975278100120040B280 /* Model */,
@@ -240,6 +243,14 @@
 				FCB8E976278100210040B280 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FCB96D9627839DE2004D69D5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FCB96D9727839E16004D69D5 /* ContactTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -499,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCB96D9827839E16004D69D5 /* ContactTableViewCell.swift in Sources */,
 				FCAC7AD52780C25600092371 /* LoginViewController.swift in Sources */,
 				FCA8E52F27808EF900530693 /* HereAndThere.xcdatamodeld in Sources */,
 				FCAC7AD72780C28000092371 /* RegisterViewController.swift in Sources */,

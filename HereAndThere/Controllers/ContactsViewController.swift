@@ -27,6 +27,7 @@ class ContactsViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        
     }
     
     func fetchUsers(){
@@ -47,7 +48,8 @@ class ContactsViewController: UIViewController {
                     let firstName = data["firstName"] as? String ?? ""
                     let lastName = data["lastName"] as? String ?? ""
                     let email = data["email"] as? String ?? ""
-                        self.users.append(User(id: id, firstName: firstName, lastName: lastName, email: email))
+                    let image = data["image"] as? String ?? ""
+                        self.users.append(User(id: id, firstName: firstName, lastName: lastName, email: email, image: image))
                 }
                 self.filteredUsers = self.users
                 self.tableView.reloadData()
@@ -70,10 +72,13 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell")!
-//        cell.textLabel?.text = "\(users[indexPath.row].firstName!) \(users[indexPath.row].lastName!)"
-        cell.textLabel?.text = filteredUsers[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell")! as! ContactTableViewCell
+        cell.configure(user: filteredUsers[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(80)
     }
     
     
@@ -82,10 +87,9 @@ extension ContactsViewController: UITableViewDataSource, UITableViewDelegate {
 extension ContactsViewController: UISearchBarDelegate {
  
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         filteredUsers = []
         
-        if searchText == "" {
+        if searchText.trimmingCharacters(in: .whitespaces) == "" {
             filteredUsers = users
         }else{
             for user in users {
@@ -96,5 +100,8 @@ extension ContactsViewController: UISearchBarDelegate {
             self.tableView.reloadData()
         }
     }
+
 }
+
+
 
