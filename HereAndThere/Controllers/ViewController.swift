@@ -25,11 +25,18 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkUserLogged()
-        
+
         tableView.delegate = self
         tableView.dataSource = self
     
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+//        userChatIDs = []
+//        chatListItems = []
+//        chats = []
+        checkUserLogged()
+
     }
     @IBAction func logoutButtonPressed(_ sender: Any) {
         handleLogout()
@@ -51,6 +58,8 @@ class ViewController: UIViewController{
     }
     
     func getUserData(){
+//        chatListItems = []
+//        chats = []
         Firestore.firestore().collection("users").document(uid).addSnapshotListener{
             document, error in
             if let error = error {
@@ -84,6 +93,8 @@ class ViewController: UIViewController{
             }else{
                 for doc in querySnapshot!.documents{
                     self.userChatIDs.append(doc.documentID)
+                    let c = doc.data()["receiverID"]
+//                    Firestore.firestore().collection("users").document(c)
                 }
                 self.getChats()
             }
@@ -112,8 +123,7 @@ class ViewController: UIViewController{
     }
     
     func getChatUsers(chat: Chat){
-//        chatListItems = []
-//        chats = []
+
         for id in chat.users! {
             if id != uid {
                 Firestore.firestore().collection("users").document(id).addSnapshotListener { [self]
@@ -126,7 +136,7 @@ class ViewController: UIViewController{
                                 let user = try querySnapshot?.data(as: User.self)
                                 user?.setFullName()
                                 self.chatListItems.append(ChatListItem(chat: chat, user: user!))
-                                self.chatListItems.sorted() { $0.chat.recentMessage?.timestamp ?? 0 > $1.chat.recentMessage?.timestamp ?? 0 }
+//                                self.chatListItems.sorted() { $0.chat.recentMessage?.timestamp ?? 0 > $1.chat.recentMessage?.timestamp ?? 0 }
                                 self.tableView.reloadData()
                             }catch{
                                 print(error)

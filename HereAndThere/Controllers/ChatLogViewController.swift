@@ -175,17 +175,53 @@ extension ChatLogViewController: MessagesDataSource, MessagesLayoutDelegate, Mes
         }
         avatarView.setCorner(radius: 10)
     }
+
+//    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+//        return 10
+//    }
     
-    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 10
+//    func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+//        let dateString = convertDate(date: message.sentDate, format: "h:mm a")
+//        return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
+//    }
+    
+    func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+        let dateString = convertDate(date: message.sentDate, format: "h:mm a")
+        return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
+    }
+    
+    func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 17
+    }
+    
+//    func cellBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+//        return 10
+//    }
+    
+//    func footerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
+//        return CGSize(width: 300, height: 300)
+//    }
+    
+    func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 20
     }
 
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         print("oh nice")
         let name = message.sender.displayName
         print(name)
-        return NSAttributedString(string: name, attributes: [NSAttributedString.Key.backgroundColor: UIColor(named: "ACAI_BERRY")])
+        return NSAttributedString(string: name, attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "ACAI_BERRY")])
     }
+    
+    
+    func convertDate(date: Date, format: String)-> String{
+          let date = date
+          let dateFormatter = DateFormatter()
+          dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+          dateFormatter.locale = NSLocale.current
+          dateFormatter.dateFormat = format
+          return dateFormatter.string(from: date)
+      }
     
 }
 
@@ -193,20 +229,16 @@ extension ChatLogViewController: MessageCellDelegate{
     func didTapMessage(in cell: MessageCollectionViewCell) {
         print("tapped Message!")
     }
-    
+
     func didTapAvatar(in cell: MessageCollectionViewCell) {
         print("tapped Avatar!")
     }
-    
 }
 
 extension ChatLogViewController: InputBarAccessoryViewDelegate{
     func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
         self.saveMessage(receiverID: kReceiver!.senderId, senderID: kSender!.senderId, text: text.trimmingCharacters(in: .whitespacesAndNewlines), timestamp: Int(Date().timeIntervalSince1970))
         inputBar.inputTextView.text = ""
-//        messages.append(KMessage(sender: kSender as! SenderType, messageId: "6", sentDate: Date(), kind: .text(text)))
-//        print("appended")
-//        self.messagesCollectionView.reloadData()
         self.messagesCollectionView.scrollToLastItem(animated: true)
     }
 }
@@ -225,3 +257,5 @@ struct KMessage: MessageType{
     
     
 }
+
+
