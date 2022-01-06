@@ -11,8 +11,9 @@ target 'HereAndThere' do
   pod 'Firebase/Firestore'
   pod 'GoogleSignIn'
   pod 'Firebase/Storage'
-  pod 'Firebase/Database'
   pod 'SDWebImageSwiftUI'
+  pod 'MessageKit', '3.7.0'
+  pod 'FirebaseFirestoreSwift'
 
   target 'HereAndThereTests' do
     inherit! :search_paths

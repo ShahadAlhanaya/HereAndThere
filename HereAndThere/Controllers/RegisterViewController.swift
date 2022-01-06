@@ -67,8 +67,8 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
                     print("error \(error)")
                 } else {
                     print("user created")
-                    self.dismissRegister()
                     self.uploadUserImage(uid: uid, fileName: "\(uid)\(Date().timeIntervalSince1970)")
+                    self.dismissRegister()
                 }
             }
         }
