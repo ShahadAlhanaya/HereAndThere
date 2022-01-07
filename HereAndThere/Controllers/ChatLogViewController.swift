@@ -86,6 +86,7 @@ class ChatLogViewController: MessagesViewController{
             messages.append(KMessage(sender: sender as! SenderType, messageId: "\(m.id)" , sentDate: Date(timeIntervalSince1970: TimeInterval(m.timestamp)), kind: .text(m.text)))
         }
         messagesCollectionView.reloadData()
+        messagesCollectionView.scrollToLastItem()
     }
     
     func fetchCurrentUser(){

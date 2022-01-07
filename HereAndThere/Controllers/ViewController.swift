@@ -17,102 +17,78 @@ class ViewController: UIViewController{
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
     
-    var userChatIDs = [String]()
-    var chatListItems = [ChatListItem]()
-    var chats = [Chat]()
     var uid = ""
+    var chatList = [ChatListItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         tableView.delegate = self
         tableView.dataSource = self
-    
+        
+        if checkUserLogged() {
+            uid = Auth.auth().currentUser!.uid
+            getUserData()
+            getChatIDS()
+        }
+        
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-//        userChatIDs = []
-//        chatListItems = []
-//        chats = []
-        checkUserLogged()
 
+    override func viewDidAppear(_ animated: Bool) {
+        if checkUserLogged() {
+            tableView.reloadData()
+        }else{
+            handleLogout()
+        }
     }
+    
     @IBAction func logoutButtonPressed(_ sender: Any) {
-        handleLogout()
+        let alert = UIAlertController(title: "Logout", message: "Are you sure want to log out from your account?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Logout", style: .default, handler: {action in
+            self.handleLogout()
+
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func addChatButtonPressed(_ sender: UIBarButtonItem) {
-        handleAddChat()
+        handleOpenChat()
     }
-    
-    func checkUserLogged(){
-        if Auth.auth().currentUser?.uid == nil {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                self.handleLogout()
-            }
-        }else{
-            uid = Auth.auth().currentUser!.uid
-            getUserData()
-        }
-    }
-    
+   
     func getUserData(){
-//        chatListItems = []
-//        chats = []
-        Firestore.firestore().collection("users").document(uid).addSnapshotListener{
-            document, error in
-            if let error = error {
-            print("\(error.localizedDescription)")
-                return
-            }
-            if let document = document, document.exists {
-                do{
-                    let user = try document.data(as: User.self)
-                    user?.setFullName()
-                    self.userNameLabel.text = user?.name
-                    self.userEmailLabel.text = user?.email
-                    if user?.image.trimmingCharacters(in: .whitespaces) != "" {
-                        self.userImageView.sd_setImage(with: URL(string: user!.image))
-                    }
-                    self.getChatIDs()
-                }catch{
-                    print(error)
-                }
-            } else {
-                print("Document does not exist")
-            }
-        }
-    }
-    
-    func getChatIDs(){
-        Firestore.firestore().collection("users").document(uid).collection("chats").addSnapshotListener {
-            querySnapshot, error in
+        print("Getting user")
+        Firestore.firestore().collection("users").document(uid).addSnapshotListener { documentSnapshot, error in
             if let error = error {
                 print(error)
             }else{
-                for doc in querySnapshot!.documents{
-                    self.userChatIDs.append(doc.documentID)
-                    let c = doc.data()["receiverID"]
-//                    Firestore.firestore().collection("users").document(c)
+                if documentSnapshot!.exists {
+                    do{
+                        let user = try documentSnapshot!.data(as: User.self)
+                        user?.setFullName()
+                        self.userNameLabel.text = user?.name
+                        self.userEmailLabel.text = user?.email
+                        if let image = user?.image {
+                            self.userImageView.sd_setImage(with: URL(string: image))
+                        }
+                    }catch{
+                        print(error)
+                    }
                 }
-                self.getChats()
             }
         }
     }
     
-    func getChats(){
-        for chat in userChatIDs {
-            Firestore.firestore().collection("chats").document(chat).addSnapshotListener { querySnapshot, error in
-                if let error = error {
-                    print(error)
-                }else{
-                    if querySnapshot!.exists {
+    func getChatIDS(){
+        print("Getting chat IDs")
+        Firestore.firestore().collection("users").document(uid).collection("chats").addSnapshotListener { querySnapshot, error in
+            if let error = error {
+                print(error)
+            }else{
+                if querySnapshot!.isEmpty == false {
+                    for cr in querySnapshot!.documents {
                         do{
-                            print("im here")
-                            let c = try querySnapshot?.data(as: Chat.self)
-                            self.chats.append(c!)
-                            self.getChatUsers(chat: c!)
+                            let chatRef = try cr.data(as: ChatReferene.self)
+                            self.getChat(chatRef: chatRef!)
                         }catch{
                             print(error)
                         }
@@ -122,34 +98,71 @@ class ViewController: UIViewController{
         }
     }
     
-    func getChatUsers(chat: Chat){
-
-        for id in chat.users! {
-            if id != uid {
-                Firestore.firestore().collection("users").document(id).addSnapshotListener { [self]
-                    querySnapshot, error in
-                    if let error = error {
-                        print(error)
-                    }else{
-                        if querySnapshot!.exists {
-                            do{
-                                let user = try querySnapshot?.data(as: User.self)
-                                user?.setFullName()
-                                self.chatListItems.append(ChatListItem(chat: chat, user: user!))
-//                                self.chatListItems.sorted() { $0.chat.recentMessage?.timestamp ?? 0 > $1.chat.recentMessage?.timestamp ?? 0 }
-                                self.tableView.reloadData()
-                            }catch{
-                                print(error)
-                            }
+    func getChat(chatRef: ChatReferene){
+        print("Getting chats")
+        Firestore.firestore().collection("chats").document(chatRef.id!).addSnapshotListener { documentSnapshot, error in
+            if let error = error {
+                print(error)
+            }else{
+                if documentSnapshot!.exists {
+                    do{
+                        let c = try documentSnapshot?.data(as: Chat.self)
+                        if c?.recentMessage != nil {
+                            self.getUserDetails(c: c!, userID: chatRef.receiverID)
                         }
+                    }catch{print(error)}
+                }
+            }
+        }
+    }
+    
+    func updateChatList(cItem: ChatListItem){
+        print("Getting updating")
+        var found = -1
+        for i in 0..<chatList.count{
+            if chatList[i].chat.id == cItem.chat.id {
+                found = i
+            }
+        }
+        
+        if found == -1 {
+            chatList.append(cItem)
+        }else{
+            chatList[found] = cItem
+        }
+        
+        chatList.sort(by: { $0.chat.recentMessage!.timestamp > $1.chat.recentMessage!.timestamp })
+        print("reloading")
+        tableView.reloadData()
+    }
+    
+    func getUserDetails(c: Chat,userID: String){
+        Firestore.firestore().collection("users").document(userID).getDocument { documentSnapshot, error in
+            if let error = error {
+                print(error)
+            }else{
+                if documentSnapshot!.exists{
+                    do{
+                        let user = try documentSnapshot?.data(as: User.self)
+                        user?.setFullName()
+                        self.updateChatList(cItem: ChatListItem(chat: c, user: user!))
+                    }catch{
+                        print(error)
                     }
                 }
             }
         }
     }
     
+    func checkUserLogged()->Bool{
+        if Auth.auth().currentUser?.uid == nil{
+            return false
+        }else{
+            return true
+        }
+    }
+
     func handleLogout(){
-        
         do{
             try Auth.auth().signOut()
         } catch let logoutError {
@@ -160,35 +173,33 @@ class ViewController: UIViewController{
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
     }
-    
-    func handleAddChat(){
+
+    func handleOpenChat(){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ContactsVC")
         vc.modalPresentationStyle = .fullScreen
         self.navigationController!.pushViewController(vc, animated: true)
-//        present(vc, animated: true, completion: nil)
     }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatListItems.count
+        return chatList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell")! as! ChatListTableViewCell
-        cell.user = chatListItems[indexPath.row].user
-        cell.chat = chatListItems[indexPath.row].chat
+        cell.user = chatList[indexPath.row].user
+        cell.chat = chatList[indexPath.row].chat
         cell.configure()
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
         let vc = ChatLogViewController()
-        vc.user = chatListItems[indexPath.row].user
-        vc.chatID = chatListItems[indexPath.row].chat.id
+        vc.user = chatList[indexPath.row].user
+        vc.chatID = chatList[indexPath.row].chat.id
         navigationController?.pushViewController(vc, animated: true)
     }
     

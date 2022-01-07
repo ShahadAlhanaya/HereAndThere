@@ -95,10 +95,9 @@ class ContactsViewController: UIViewController, OpenChatDelegate {
                     //it already exist and i need to get it
                     for doc in querySnapshot!.documents {
                         self.chatID = doc.documentID
-                        //self.getChat(chatID: doc.documentID)
+                        self.transitionToChatView(user)
                     }
                 }
-                self.transitionToChatView(user)
             }
         }
         
@@ -118,6 +117,7 @@ class ContactsViewController: UIViewController, OpenChatDelegate {
                 self.addChatReference(documentID: ref.documentID,userID: self.uid, receiverID: user.id!)
                 self.addChatReference(documentID: ref.documentID, userID: user.id!, receiverID: self.uid)
                 self.chatID = ref.documentID
+                self.transitionToChatView(user)
                 
             }
         }

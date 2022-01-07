@@ -36,9 +36,9 @@ class ChatListTableViewCell: UITableViewCell {
         if let timestamp: Int = chat?.recentMessage?.timestamp {
             let calendar = Calendar.current
             if calendar.isDateInYesterday(Date(timeIntervalSince1970: TimeInterval(timestamp))){
-                date = "Yesterdat"
+                date = "Yesterday"
             }else if calendar.isDateInToday(Date(timeIntervalSince1970: TimeInterval(timestamp))){
-                date = "Today"
+                date = convertDate(timestamp: timestamp, format: "h:mm a")
             }else{
                 date = convertDate(timestamp: timestamp, format: "MMM d")
             }

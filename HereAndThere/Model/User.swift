@@ -12,9 +12,8 @@ class User: Codable {
     @DocumentID var id: String?
     let email, firstName, lastName, image: String
     var name: String?
-
     
-    init(email: String, firstName: String, lastName: String, image: String, chats: [ChatReferene]) {
+    init(email: String, firstName: String, lastName: String, image: String) {
         self.email = email
         self.firstName = firstName
         self.lastName = lastName
@@ -37,6 +36,7 @@ class ChatReferene: Codable {
         self.receiverID = receiverID
     }
 }
+
 
 
 class Chat: Codable {
