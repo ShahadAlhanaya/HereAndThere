@@ -30,6 +30,16 @@ class LoginViewController: UIViewController {
         }
     }
     
+    @IBAction func joinUsButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "RegisterVC")
+        if var viewControllers = navigationController?.viewControllers {
+            viewControllers[viewControllers.count - 1] = vc
+            navigationController?.viewControllers = viewControllers
+        }
+    }
+    
+    
     func handleLogin(){
     
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)

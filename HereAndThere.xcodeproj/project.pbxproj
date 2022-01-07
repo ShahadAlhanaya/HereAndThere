@@ -25,6 +25,9 @@
 		FC1BE0192780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00C2780C01C00953BDD /* Comfortaa-SemiBold.ttf */; };
 		FC1BE01A2780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00C2780C01C00953BDD /* Comfortaa-SemiBold.ttf */; };
 		FC1BE01B2780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC1BE00C2780C01C00953BDD /* Comfortaa-SemiBold.ttf */; };
+		FC69C8582788DD7E00ADC0D8 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69C8572788DD7E00ADC0D8 /* Chat.swift */; };
+		FC69C85A2788DDD300ADC0D8 /* ChatListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69C8592788DDD300ADC0D8 /* ChatListItem.swift */; };
+		FC69C85C2788DE0800ADC0D8 /* ChatReferene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69C85B2788DE0800ADC0D8 /* ChatReferene.swift */; };
 		FC92D64A2784F27000375B71 /* OpenChatDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC92D6492784F27000375B71 /* OpenChatDelegate.swift */; };
 		FCA8E52527808EF900530693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8E52427808EF900530693 /* AppDelegate.swift */; };
 		FCA8E52727808EF900530693 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA8E52627808EF900530693 /* SceneDelegate.swift */; };
@@ -82,6 +85,9 @@
 		FC1BE00A2780C01C00953BDD /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		FC1BE00B2780C01C00953BDD /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		FC1BE00C2780C01C00953BDD /* Comfortaa-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-SemiBold.ttf"; sourceTree = "<group>"; };
+		FC69C8572788DD7E00ADC0D8 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		FC69C8592788DDD300ADC0D8 /* ChatListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListItem.swift; sourceTree = "<group>"; };
+		FC69C85B2788DE0800ADC0D8 /* ChatReferene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatReferene.swift; sourceTree = "<group>"; };
 		FC92D6492784F27000375B71 /* OpenChatDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenChatDelegate.swift; sourceTree = "<group>"; };
 		FCA8E52127808EF900530693 /* HereAndThere.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HereAndThere.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA8E52427808EF900530693 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -206,10 +212,10 @@
 			isa = PBXGroup;
 			children = (
 				FCB96D9627839DE2004D69D5 /* Views */,
-				FC1BE0072780C00200953BDD /* Fonts */,
 				FCA8E557278095C400530693 /* Controllers */,
 				FC92D6482784F1B500375B71 /* Delegates */,
 				FCB8E975278100120040B280 /* Model */,
+				FC1BE0072780C00200953BDD /* Fonts */,
 				FCA8E52427808EF900530693 /* AppDelegate.swift */,
 				FCA8E52627808EF900530693 /* SceneDelegate.swift */,
 				FCA8E52A27808EF900530693 /* Main.storyboard */,
@@ -257,6 +263,9 @@
 			isa = PBXGroup;
 			children = (
 				FCB8E976278100210040B280 /* User.swift */,
+				FC69C8572788DD7E00ADC0D8 /* Chat.swift */,
+				FC69C8592788DDD300ADC0D8 /* ChatListItem.swift */,
+				FC69C85B2788DE0800ADC0D8 /* ChatReferene.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -535,11 +544,14 @@
 				FCA8E52927808EF900530693 /* ViewController.swift in Sources */,
 				FCB96D9C27847BA1004D69D5 /* ChatListTableViewCell.swift in Sources */,
 				FCA8E52527808EF900530693 /* AppDelegate.swift in Sources */,
+				FC69C85A2788DDD300ADC0D8 /* ChatListItem.swift in Sources */,
+				FC69C85C2788DE0800ADC0D8 /* ChatReferene.swift in Sources */,
 				FCB8E9702780EAAC0040B280 /* Utilities.swift in Sources */,
 				FCAC7AD32780C23A00092371 /* LoginRegisterViewController.swift in Sources */,
 				FCA8E52727808EF900530693 /* SceneDelegate.swift in Sources */,
 				FCB8E977278100210040B280 /* User.swift in Sources */,
 				FC92D64A2784F27000375B71 /* OpenChatDelegate.swift in Sources */,
+				FC69C8582788DD7E00ADC0D8 /* Chat.swift in Sources */,
 				FCB8E9742780F91E0040B280 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

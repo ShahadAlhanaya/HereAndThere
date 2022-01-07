@@ -40,6 +40,16 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
         presentPhotoActionSheet()
     }
     
+    @IBAction func signInButtonPressed(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+        if var viewControllers = navigationController?.viewControllers {
+            viewControllers[viewControllers.count - 1] = vc
+            navigationController?.viewControllers = viewControllers
+        }
+    }
+    
+    
     
     func handleRegister(){
         

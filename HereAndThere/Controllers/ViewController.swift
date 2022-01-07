@@ -137,7 +137,7 @@ class ViewController: UIViewController{
     }
     
     func getUserDetails(c: Chat,userID: String){
-        Firestore.firestore().collection("users").document(userID).getDocument { documentSnapshot, error in
+        Firestore.firestore().collection("users").document(userID).addSnapshotListener{ documentSnapshot, error in
             if let error = error {
                 print(error)
             }else{

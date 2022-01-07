@@ -167,16 +167,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="civ-Uw-qcM">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="person.fill.badge.plus" catalog="system" id="QA7-7Z-Zea">
-                            <color key="tintColor" name="INFORMATIVE_PINK"/>
-                            <connections>
-                                <action selector="addChatButtonPressed:" destination="iCs-sJ-7E9" id="E5n-mw-It7"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="logout" image="rectangle.portrait.and.arrow.right" catalog="system" id="zcF-Bh-jOS">
+                        <barButtonItem key="leftBarButtonItem" title="logout" image="gearshape" catalog="system" id="zcF-Bh-jOS">
                             <color key="tintColor" name="INFORMATIVE_PINK"/>
                             <connections>
                                 <action selector="logoutButtonPressed:" destination="iCs-sJ-7E9" id="0Vs-bm-1H0"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.message" catalog="system" id="QA7-7Z-Zea">
+                            <color key="tintColor" name="INFORMATIVE_PINK"/>
+                            <connections>
+                                <action selector="addChatButtonPressed:" destination="iCs-sJ-7E9" id="E5n-mw-It7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -444,6 +444,9 @@ and everywhere!</string>
                                         <buttonConfiguration key="configuration" style="plain" title="Join Us" titleAlignment="leading">
                                             <fontDescription key="titleFontDescription" name="Comfortaa-SemiBold" family="Comfortaa" pointSize="17"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="joinUsButtonPressed:" destination="dqN-jH-iOM" eventType="touchUpInside" id="nwA-HR-ThX"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -697,6 +700,9 @@ and everywhere!</string>
                                         <buttonConfiguration key="configuration" style="plain" title="Sign in" titleAlignment="leading">
                                             <fontDescription key="titleFontDescription" name="Comfortaa-SemiBold" family="Comfortaa" pointSize="17"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="signInButtonPressed:" destination="kOV-qV-myx" eventType="touchUpInside" id="FTP-eK-jVi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -798,12 +804,12 @@ and everywhere!</string>
     <resources>
         <image name="earth" width="256" height="256"/>
         <image name="empty_profile" width="256" height="256"/>
+        <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="logo_title" width="328" height="328"/>
         <image name="message" catalog="system" width="128" height="113"/>
-        <image name="person.fill.badge.plus" catalog="system" width="128" height="124"/>
         <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="plus.message" catalog="system" width="128" height="113"/>
         <image name="profile1" width="256" height="256"/>
-        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <namedColor name="ACAI_BERRY">
             <color red="0.27799999713897705" green="0.18799999356269836" blue="0.28600001335144043" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
