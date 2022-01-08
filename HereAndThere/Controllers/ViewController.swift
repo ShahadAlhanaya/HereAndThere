@@ -21,6 +21,7 @@ class ViewController: UIViewController{
     
     var uid = ""
     var chatList = [ChatListItem]()
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +45,7 @@ class ViewController: UIViewController{
     }
     
     @IBAction func logoutButtonPressed(_ sender: Any) {
-        let alert = UIAlertController(title: "Logout", message: "Are you sure want to log out from your account?", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Logout", style: .default, handler: {action in
-            self.handleLogout()
-
-        }))
-        self.present(alert, animated: true, completion: nil)
+        handleOpenProfile()
     }
     
     @IBAction func addChatButtonPressed(_ sender: UIBarButtonItem) {
@@ -65,11 +60,11 @@ class ViewController: UIViewController{
             }else{
                 if documentSnapshot!.exists {
                     do{
-                        let user = try documentSnapshot!.data(as: User.self)
-                        user?.setFullName()
-                        self.userNameLabel.text = user?.name
-                        self.userEmailLabel.text = user?.email
-                        if let image = user?.image {
+                        self.user = try documentSnapshot!.data(as: User.self)
+                        self.user?.setFullName()
+                        self.userNameLabel.text = self.user?.name
+                        self.userEmailLabel.text = self.user?.email
+                        if let image = self.user?.image {
                             self.userImageView.sd_setImage(with: URL(string: image))
                         }
                     }catch{
@@ -172,6 +167,21 @@ class ViewController: UIViewController{
         }
     }
 
+    func handleOpenProfile(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.user = user
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
+    func handleOpenChat(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ContactsVC")
+        vc.modalPresentationStyle = .fullScreen
+        self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
     func handleLogout(){
         
         //logout facebook
@@ -186,13 +196,6 @@ class ViewController: UIViewController{
         let vc = storyboard.instantiateViewController(withIdentifier: "LoginRegisterVC")
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
-    }
-
-    func handleOpenChat(){
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ContactsVC")
-        vc.modalPresentationStyle = .fullScreen
-        self.navigationController!.pushViewController(vc, animated: true)
     }
 }
 

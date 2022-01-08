@@ -92,7 +92,7 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
                     print("error \(error)")
                 } else {
                     print("user created")
-                    self.uploadUserImage(uid: uid, fileName: "\(uid)\(Date().timeIntervalSince1970)")
+                    self.uploadUserImage(uid: uid)
                     self.dismissRegister()
                 }
             }
@@ -107,9 +107,9 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
         present(myNavigationController, animated: true)
     }
     
-    func uploadUserImage(uid: String, fileName: String){
+    func uploadUserImage(uid: String){
         var imageURL = ""
-        let storageRef = Storage.storage().reference().child("\(fileName).png")
+        let storageRef = Storage.storage().reference().child("\(uid).png")
         if let uploadData = self.profileImageView.image?.jpegData(compressionQuality: 0.5){
             storageRef.putData(uploadData, metadata: nil){
                 (metadata, error) in

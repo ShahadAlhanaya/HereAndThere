@@ -56,7 +56,7 @@ class LoginViewController: UIViewController {
                     return
                 }
                 
-                let fackbookRequest  = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email, first_name, last_name, picture"], tokenString: token, version: nil, httpMethod: .get)
+                let fackbookRequest  = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email, first_name, last_name, picture.type(large)"], tokenString: token, version: nil, httpMethod: .get)
                 fackbookRequest.start { _, result, error in
                     guard let result = result as? [String: Any], error == nil else{
                         print("faild to make facebook graph request")
@@ -134,11 +134,30 @@ class LoginViewController: UIViewController {
         
         Auth.auth().signIn(withEmail: email, password: password) {
             result, error in
-            if error != nil{
-                self.showError(error!.localizedDescription)
-            }else{
-                self.dismissLogin()
+            
+            var errorStr = "something went wrong"
+            if let x = error {
+                let err = x as NSError
+                switch err.code {
+                     case AuthErrorCode.wrongPassword.rawValue:
+                        errorStr = "invalid credentials"
+                     case AuthErrorCode.invalidEmail.rawValue:
+                        errorStr = "invalid credentials"
+                     case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+                        errorStr = "invalid credentials"
+                     case AuthErrorCode.emailAlreadyInUse.rawValue:
+                        errorStr = "email is alreay in use"
+                    case AuthErrorCode.userNotFound.rawValue:
+                        errorStr = "user not found"
+                     default:
+                        print("unknown error: \(err.localizedDescription)")
+                     }
+                self.showError(errorStr)
+                return
             }
+            
+            self.dismissLogin()
+            
         }
     }
     

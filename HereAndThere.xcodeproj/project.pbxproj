@@ -51,6 +51,9 @@
 		FCB96D9827839E16004D69D5 /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB96D9727839E16004D69D5 /* ContactTableViewCell.swift */; };
 		FCB96D9A27845857004D69D5 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB96D9927845857004D69D5 /* ChatLogViewController.swift */; };
 		FCB96D9C27847BA1004D69D5 /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB96D9B27847BA1004D69D5 /* ChatListTableViewCell.swift */; };
+		FCD16B4E278A0207004E2791 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B4D278A0207004E2791 /* ProfileViewController.swift */; };
+		FCD16B50278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B4F278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift */; };
+		FCD16B52278A1C45004E2791 /* ChooseProfileImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B51278A1C45004E2791 /* ChooseProfileImageDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +116,9 @@
 		FCB96D9727839E16004D69D5 /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		FCB96D9927845857004D69D5 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		FCB96D9B27847BA1004D69D5 /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
+		FCD16B4D278A0207004E2791 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FCD16B4F278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		FCD16B51278A1C45004E2791 /* ChooseProfileImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProfileImageDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				FC92D6492784F27000375B71 /* OpenChatDelegate.swift */,
+				FCD16B51278A1C45004E2791 /* ChooseProfileImageDelegate.swift */,
 			);
 			path = Delegates;
 			sourceTree = "<group>";
@@ -255,6 +262,7 @@
 				FCAC7AD62780C28000092371 /* RegisterViewController.swift */,
 				FCB8E9732780F91E0040B280 /* ContactsViewController.swift */,
 				FCB96D9927845857004D69D5 /* ChatLogViewController.swift */,
+				FCD16B4D278A0207004E2791 /* ProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -275,6 +283,7 @@
 			children = (
 				FCB96D9727839E16004D69D5 /* ContactTableViewCell.swift */,
 				FCB96D9B27847BA1004D69D5 /* ChatListTableViewCell.swift */,
+				FCD16B4F278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -538,10 +547,12 @@
 			files = (
 				FCB96D9827839E16004D69D5 /* ContactTableViewCell.swift in Sources */,
 				FCAC7AD52780C25600092371 /* LoginViewController.swift in Sources */,
+				FCD16B52278A1C45004E2791 /* ChooseProfileImageDelegate.swift in Sources */,
 				FCA8E52F27808EF900530693 /* HereAndThere.xcdatamodeld in Sources */,
 				FCAC7AD72780C28000092371 /* RegisterViewController.swift in Sources */,
 				FCB96D9A27845857004D69D5 /* ChatLogViewController.swift in Sources */,
 				FCA8E52927808EF900530693 /* ViewController.swift in Sources */,
+				FCD16B4E278A0207004E2791 /* ProfileViewController.swift in Sources */,
 				FCB96D9C27847BA1004D69D5 /* ChatListTableViewCell.swift in Sources */,
 				FCA8E52527808EF900530693 /* AppDelegate.swift in Sources */,
 				FC69C85A2788DDD300ADC0D8 /* ChatListItem.swift in Sources */,
@@ -552,6 +563,7 @@
 				FCB8E977278100210040B280 /* User.swift in Sources */,
 				FC92D64A2784F27000375B71 /* OpenChatDelegate.swift in Sources */,
 				FC69C8582788DD7E00ADC0D8 /* Chat.swift in Sources */,
+				FCD16B50278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift in Sources */,
 				FCB8E9742780F91E0040B280 /* ContactsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
