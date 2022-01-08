@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
@@ -14,9 +15,11 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var errorLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         applyUICustomization()
+
     }
 
     @IBAction func signInButtonPressed(_ sender: UIButton) {
@@ -30,6 +33,8 @@ class LoginViewController: UIViewController {
         }
     }
     
+    
+    
     @IBAction func joinUsButtonPressed(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegisterVC")
@@ -38,6 +43,88 @@ class LoginViewController: UIViewController {
             navigationController?.viewControllers = viewControllers
         }
     }
+    
+    @IBAction func facebookButtonPressed(_ sender: UIButton) {
+        let fbLoginManager = FBSDKLoginKit.LoginManager()
+        fbLoginManager.logIn(permissions: ["public_profile", "email"], from: self) { result, error in
+            if let error = error {
+                print(error)
+            }else{
+                
+                guard let token = result?.token?.tokenString else{
+                    print("noice: user failed to login")
+                    return
+                }
+                
+                let fackbookRequest  = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email, first_name, last_name, picture"], tokenString: token, version: nil, httpMethod: .get)
+                fackbookRequest.start { _, result, error in
+                    guard let result = result as? [String: Any], error == nil else{
+                        print("faild to make facebook graph request")
+                        return
+                    }
+                    
+                    print(result)
+                    guard let firstName = result["first_name"] as? String,
+                          let lastName = result["last_name"] as? String,
+                          let id = result["id"] as? String,
+                          let email = result["email"] as? String else {
+                              print("failed to get email and name ")
+                              return
+                    }
+                    var userProfileImage = ""
+                    if let profilePicObj = result["picture"] as? [String:Any]{
+                        if let profilePicData = profilePicObj["data"] as? [String:Any] {
+                            if let profilePic = profilePicData["url"] as? String {
+                                userProfileImage = profilePic
+                            }
+                        }
+                    }
+                    
+                    let credential = FacebookAuthProvider.credential(withAccessToken: token)
+                    
+                    Auth.auth().signIn(with: credential, completion: {
+                        authResult, error in
+                        if let error = error {
+                            print(error)
+                            print("noice: facebook login failed")
+                        }else{
+                            print("noice: successfully user logged in")
+                            Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).setData([
+                                "email": email,
+                                "firstName": firstName,
+                                "lastName": lastName,
+                                "image": userProfileImage
+                            ])
+                            self.dismissLogin()
+                        }
+                    })
+                    
+                }
+            }
+        }
+    }
+    
+    @IBAction func forgotPasswordButtonPressed(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Reset Password", message: "You will receive an email for resetting your password", preferredStyle: .alert)
+        alert.addTextField { textField in
+            textField.text = self.emailTextField.text
+            textField.placeholder = "Email address"
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Send", style: .default, handler: {action in
+            let email = alert.textFields![0].text ?? ""
+            if email.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+                Auth.auth().sendPasswordReset(withEmail: email) { error in
+                    if let error = error {
+                        print(error)
+                    }
+                }
+            }
+        }))
+        self.present(alert, animated: true, completion: nil)
+      
+    }
+    
     
     
     func handleLogin(){

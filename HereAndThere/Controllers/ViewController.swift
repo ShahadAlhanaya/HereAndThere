@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import SDWebImage
+import FBSDKLoginKit
 
 class ViewController: UIViewController{
 
@@ -16,6 +17,7 @@ class ViewController: UIViewController{
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userEmailLabel: UILabel!
     @IBOutlet weak var userImageView: UIImageView!
+    @IBOutlet weak var noChatsImage: UIImageView!
     
     var uid = ""
     var chatList = [ChatListItem]()
@@ -93,6 +95,8 @@ class ViewController: UIViewController{
                             print(error)
                         }
                     }
+                }else{
+                    self.noChatsImage.isHidden = false
                 }
             }
         }
@@ -116,26 +120,6 @@ class ViewController: UIViewController{
         }
     }
     
-    func updateChatList(cItem: ChatListItem){
-        print("Getting updating")
-        var found = -1
-        for i in 0..<chatList.count{
-            if chatList[i].chat.id == cItem.chat.id {
-                found = i
-            }
-        }
-        
-        if found == -1 {
-            chatList.append(cItem)
-        }else{
-            chatList[found] = cItem
-        }
-        
-        chatList.sort(by: { $0.chat.recentMessage!.timestamp > $1.chat.recentMessage!.timestamp })
-        print("reloading")
-        tableView.reloadData()
-    }
-    
     func getUserDetails(c: Chat,userID: String){
         Firestore.firestore().collection("users").document(userID).addSnapshotListener{ documentSnapshot, error in
             if let error = error {
@@ -154,6 +138,32 @@ class ViewController: UIViewController{
         }
     }
     
+    func updateChatList(cItem: ChatListItem){
+        print("Getting updating")
+        var found = -1
+        for i in 0..<chatList.count{
+            if chatList[i].chat.id == cItem.chat.id {
+                found = i
+            }
+        }
+    
+        if found == -1 {
+            chatList.append(cItem)
+        }else{
+            chatList[found] = cItem
+        }
+        
+        if chatList.isEmpty {
+            self.noChatsImage.isHidden = false
+        }else{
+            self.noChatsImage.isHidden = true
+        }
+        
+        chatList.sort(by: { $0.chat.recentMessage!.timestamp > $1.chat.recentMessage!.timestamp })
+        print("reloading")
+        tableView.reloadData()
+    }
+    
     func checkUserLogged()->Bool{
         if Auth.auth().currentUser?.uid == nil{
             return false
@@ -163,6 +173,10 @@ class ViewController: UIViewController{
     }
 
     func handleLogout(){
+        
+        //logout facebook
+        FBSDKLoginKit.LoginManager().logOut()
+        
         do{
             try Auth.auth().signOut()
         } catch let logoutError {

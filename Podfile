@@ -14,6 +14,9 @@ target 'HereAndThere' do
   pod 'SDWebImageSwiftUI'
   pod 'MessageKit', '3.7.0'
   pod 'FirebaseFirestoreSwift'
+  pod 'FBSDKLoginKit'
+  pod 'FBSDKCoreKit'
+    
 
   target 'HereAndThereTests' do
     inherit! :search_paths

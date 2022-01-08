@@ -58,11 +58,26 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        
         Auth.auth().createUser(withEmail: email, password: password) {
             result, error in
             
-            if error != nil{
-                print("error \(error)")
+            var errorStr = "something went wrong"
+            if let x = error {
+                let err = x as NSError
+                switch err.code {
+                     case AuthErrorCode.wrongPassword.rawValue:
+                        errorStr = "invalid credentials"
+                     case AuthErrorCode.invalidEmail.rawValue:
+                        errorStr = "invalid credentials"
+                     case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+                        errorStr = "invalid credentials"
+                     case AuthErrorCode.emailAlreadyInUse.rawValue:
+                        errorStr = "email is alreay in use"
+                     default:
+                        print("unknown error: \(err.localizedDescription)")
+                     }
+                self.showError(errorStr)
                 return
             }
     
@@ -123,15 +138,15 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
             return "All Fields are required"
         }
         
-//        let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        if Utilities.isValidPassword(cleanedEmail) == false {
-//            return "Please enter a valid email"
-//        }
+        let cleanedEmail = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isValidEmail(cleanedEmail) == false {
+            return "Please enter a valid email address"
+        }
         
-//        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-//        if Utilities.isValidPassword(cleanedPassword) == false {
-//            return "Password should be at least 8 characters, and contains 1 upper case letter, 1 lower case letter, 1 number, and 1 special character"
-//        }
+        let cleanedPassword = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if Utilities.isValidPassword(cleanedPassword) == false {
+            return "Password should be at least 8 characters and contains: \n1 upper case letter \n1 lower case letter \n1 number"
+        }
         
         return nil
     }
