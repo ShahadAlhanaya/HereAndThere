@@ -52,7 +52,7 @@ class LoginViewController: UIViewController {
             }else{
                 
                 guard let token = result?.token?.tokenString else{
-                    print("noice: user failed to login")
+                    print("user failed to login")
                     return
                 }
                 
@@ -86,9 +86,9 @@ class LoginViewController: UIViewController {
                         authResult, error in
                         if let error = error {
                             print(error)
-                            print("noice: facebook login failed")
+                            print("facebook login failed")
                         }else{
-                            print("noice: successfully user logged in")
+                            print("successfully user logged in")
                             Firestore.firestore().collection("users").document(Auth.auth().currentUser!.uid).setData([
                                 "email": email,
                                 "firstName": firstName,

@@ -833,7 +833,7 @@ and everywhere!</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sse-18-NlE">
-                                <rect key="frame" x="30" y="153.5" width="354" height="589"/>
+                                <rect key="frame" x="30" y="89.5" width="354" height="717"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty_profile" translatesAutoresizingMaskIntoConstraints="NO" id="VjA-yH-kXG">
                                         <rect key="frame" x="117" y="0.0" width="120" height="120"/>
@@ -861,7 +861,7 @@ and everywhere!</string>
                                             <action selector="profileImageButtonPressed:" destination="kOV-qV-myx" eventType="touchUpInside" id="a8f-gw-VOj"/>
                                         </connections>
                                     </button>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ow-P0-7Bm">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2ow-P0-7Bm">
                                         <rect key="frame" x="0.0" y="140" width="354" height="100"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -1062,8 +1062,8 @@ and everywhere!</string>
                             <constraint firstItem="Sse-18-NlE" firstAttribute="leading" secondItem="H0k-Wi-2MK" secondAttribute="leading" constant="30" id="9Dk-Uv-mRS"/>
                             <constraint firstItem="Sse-18-NlE" firstAttribute="centerY" secondItem="4eg-mf-BzO" secondAttribute="centerY" id="9kl-99-uab"/>
                             <constraint firstItem="H0k-Wi-2MK" firstAttribute="trailing" secondItem="Sse-18-NlE" secondAttribute="trailing" constant="30" id="TIW-kQ-sf5"/>
+                            <constraint firstItem="Sse-18-NlE" firstAttribute="height" secondItem="4eg-mf-BzO" secondAttribute="height" multiplier="0.8" id="UtB-4s-UoN"/>
                             <constraint firstItem="Sse-18-NlE" firstAttribute="centerX" secondItem="4eg-mf-BzO" secondAttribute="centerX" id="VeH-JT-glj"/>
-                            <constraint firstItem="Sse-18-NlE" firstAttribute="height" secondItem="4eg-mf-BzO" secondAttribute="height" multiplier="0.657366" id="svZ-Vo-N5D"/>
                         </constraints>
                     </view>
                     <connections>

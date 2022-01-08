@@ -26,6 +26,7 @@ class ChatLogViewController: MessagesViewController{
         super.viewDidLoad()
         messagesCollectionView.backgroundColor = UIColor(named: "WHITE_OWL")
         messagesCollectionView.backgroundColor = UIColor(patternImage: UIImage(named: "chat_bg")!)
+        
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(named: "ACAI_BERRY")]
         if Auth.auth().currentUser?.uid == nil || user == nil{
 
@@ -176,15 +177,6 @@ extension ChatLogViewController: MessagesDataSource, MessagesLayoutDelegate, Mes
         }
         avatarView.setCorner(radius: 10)
     }
-
-//    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-//        return 10
-//    }
-    
-//    func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
-//        let dateString = convertDate(date: message.sentDate, format: "h:mm a")
-//        return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
-//    }
     
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let dateString = convertDate(date: message.sentDate, format: "h:mm a")
@@ -194,14 +186,6 @@ extension ChatLogViewController: MessagesDataSource, MessagesLayoutDelegate, Mes
     func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 17
     }
-    
-//    func cellBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-//        return 10
-//    }
-    
-//    func footerViewSize(for section: Int, in messagesCollectionView: MessagesCollectionView) -> CGSize {
-//        return CGSize(width: 300, height: 300)
-//    }
     
     func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 20

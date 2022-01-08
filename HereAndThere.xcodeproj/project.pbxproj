@@ -54,6 +54,7 @@
 		FCD16B4E278A0207004E2791 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B4D278A0207004E2791 /* ProfileViewController.swift */; };
 		FCD16B50278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B4F278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift */; };
 		FCD16B52278A1C45004E2791 /* ChooseProfileImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B51278A1C45004E2791 /* ChooseProfileImageDelegate.swift */; };
+		FCD16B54278A3078004E2791 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD16B53278A3078004E2791 /* app_icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		FCD16B4D278A0207004E2791 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FCD16B4F278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCD16B51278A1C45004E2791 /* ChooseProfileImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProfileImageDelegate.swift; sourceTree = "<group>"; };
+		FCD16B53278A3078004E2791 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +231,7 @@
 				FCA8E53027808EFB00530693 /* Assets.xcassets */,
 				FCA8E53227808EFB00530693 /* LaunchScreen.storyboard */,
 				FCA8E53527808EFB00530693 /* Info.plist */,
+				FCD16B53278A3078004E2791 /* app_icon.png */,
 				FCAC7AD82780CA8E00092371 /* GoogleService-Info.plist */,
 				FCA8E52D27808EF900530693 /* HereAndThere.xcdatamodeld */,
 				FCB8E96F2780EAAC0040B280 /* Utilities.swift */,
@@ -402,6 +405,7 @@
 				FCAC7AD92780CA8E00092371 /* GoogleService-Info.plist in Resources */,
 				FC1BE0192780C01C00953BDD /* Comfortaa-SemiBold.ttf in Resources */,
 				FC1BE0102780C01C00953BDD /* Comfortaa-Bold.ttf in Resources */,
+				FCD16B54278A3078004E2791 /* app_icon.png in Resources */,
 				FC1BE0162780C01C00953BDD /* Comfortaa-Regular.ttf in Resources */,
 				FC1BE00D2780C01C00953BDD /* Comfortaa-Medium.ttf in Resources */,
 				FC1BE0132780C01C00953BDD /* Comfortaa-Light.ttf in Resources */,
