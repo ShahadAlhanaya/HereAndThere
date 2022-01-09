@@ -19,12 +19,7 @@ class LoginRegisterViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "RegisterVC")
         let myNavigationController = UINavigationController(rootViewController: vc)
-        
-//        myNavigationController.modalPresentationStyle = .fullScreen
         present(myNavigationController, animated: true)
-//        vc.modalPresentationStyle = .fullScreen
-//        self.navigationController!.pushViewController(vc, animated: true)
-//        present(vc, animated: true, completion: nil)
     }
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         print("login!")

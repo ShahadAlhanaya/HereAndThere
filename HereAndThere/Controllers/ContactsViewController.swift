@@ -26,15 +26,6 @@ class ContactsViewController: UIViewController, OpenChatDelegate {
         customizeBackButton()
         
         if Auth.auth().currentUser?.uid == nil {
-//            do{
-//                try Auth.auth().signOut()
-//            } catch let logoutError {
-//                print(logoutError)
-//            }
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = storyboard.instantiateViewController(withIdentifier: "LoginRegisterVC")
-//            vc.modalPresentationStyle = .fullScreen
-//            present(vc, animated: true, completion: nil)
         }else{
             fetchUsers()
             uid = Auth.auth().currentUser?.uid ?? ""

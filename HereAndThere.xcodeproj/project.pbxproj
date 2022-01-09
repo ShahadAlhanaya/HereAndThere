@@ -55,6 +55,9 @@
 		FCD16B50278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B4F278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift */; };
 		FCD16B52278A1C45004E2791 /* ChooseProfileImageDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B51278A1C45004E2791 /* ChooseProfileImageDelegate.swift */; };
 		FCD16B54278A3078004E2791 /* app_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FCD16B53278A3078004E2791 /* app_icon.png */; };
+		FCD16B56278A3D47004E2791 /* AuthenticationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B55278A3D47004E2791 /* AuthenticationModel.swift */; };
+		FCD16B58278A454D004E2791 /* FirebaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B57278A454D004E2791 /* FirebaseModel.swift */; };
+		FCD16B5A278A4A34004E2791 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD16B59278A4A34004E2791 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +124,9 @@
 		FCD16B4F278A0AFA004E2791 /* ProfileImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FCD16B51278A1C45004E2791 /* ChooseProfileImageDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseProfileImageDelegate.swift; sourceTree = "<group>"; };
 		FCD16B53278A3078004E2791 /* app_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = app_icon.png; sourceTree = "<group>"; };
+		FCD16B55278A3D47004E2791 /* AuthenticationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationModel.swift; sourceTree = "<group>"; };
+		FCD16B57278A454D004E2791 /* FirebaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseModel.swift; sourceTree = "<group>"; };
+		FCD16B59278A4A34004E2791 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +241,7 @@
 				FCAC7AD82780CA8E00092371 /* GoogleService-Info.plist */,
 				FCA8E52D27808EF900530693 /* HereAndThere.xcdatamodeld */,
 				FCB8E96F2780EAAC0040B280 /* Utilities.swift */,
+				FCD16B59278A4A34004E2791 /* Extensions.swift */,
 			);
 			path = HereAndThere;
 			sourceTree = "<group>";
@@ -277,6 +284,8 @@
 				FC69C8572788DD7E00ADC0D8 /* Chat.swift */,
 				FC69C8592788DDD300ADC0D8 /* ChatListItem.swift */,
 				FC69C85B2788DE0800ADC0D8 /* ChatReferene.swift */,
+				FCD16B55278A3D47004E2791 /* AuthenticationModel.swift */,
+				FCD16B57278A454D004E2791 /* FirebaseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -549,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD16B5A278A4A34004E2791 /* Extensions.swift in Sources */,
 				FCB96D9827839E16004D69D5 /* ContactTableViewCell.swift in Sources */,
 				FCAC7AD52780C25600092371 /* LoginViewController.swift in Sources */,
 				FCD16B52278A1C45004E2791 /* ChooseProfileImageDelegate.swift in Sources */,
@@ -561,8 +571,10 @@
 				FCA8E52527808EF900530693 /* AppDelegate.swift in Sources */,
 				FC69C85A2788DDD300ADC0D8 /* ChatListItem.swift in Sources */,
 				FC69C85C2788DE0800ADC0D8 /* ChatReferene.swift in Sources */,
+				FCD16B56278A3D47004E2791 /* AuthenticationModel.swift in Sources */,
 				FCB8E9702780EAAC0040B280 /* Utilities.swift in Sources */,
 				FCAC7AD32780C23A00092371 /* LoginRegisterViewController.swift in Sources */,
+				FCD16B58278A454D004E2791 /* FirebaseModel.swift in Sources */,
 				FCA8E52727808EF900530693 /* SceneDelegate.swift in Sources */,
 				FCB8E977278100210040B280 /* User.swift in Sources */,
 				FC92D64A2784F27000375B71 /* OpenChatDelegate.swift in Sources */,

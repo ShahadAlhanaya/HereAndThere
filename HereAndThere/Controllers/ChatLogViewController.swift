@@ -19,7 +19,6 @@ class ChatLogViewController: MessagesViewController{
     var kSender: Sender?
     var kReceiver: Sender?
     
-    
     var messages = [KMessage]()
     
     override func viewDidLoad() {
@@ -53,6 +52,15 @@ class ChatLogViewController: MessagesViewController{
                 chat = getChat(chatID: chatID!)
             }
         }
+    }
+    
+    func customizeBackButton(){
+        let imgBack = UIImage(named: "ic_back")
+        navigationController?.navigationBar.backIndicatorImage = imgBack
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = imgBack
+        self.navigationController?.navigationBar.tintColor = UIColor(named: "INFORMATIVE_PINK")
+        navigationItem.leftItemsSupplementBackButton = true
+        navigationController?.navigationBar.topItem?.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
     }
     
     func getChat(chatID: String)-> Chat?{
@@ -180,7 +188,8 @@ extension ChatLogViewController: MessagesDataSource, MessagesLayoutDelegate, Mes
     
     func messageBottomLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let dateString = convertDate(date: message.sentDate, format: "h:mm a")
-        return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
+        return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "ACAI_BERRY"),
+            NSAttributedString.Key.font: UIFont(name: "Comfortaa-SemiBold", size: 12)])
     }
     
     func messageBottomLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
@@ -188,14 +197,14 @@ extension ChatLogViewController: MessagesDataSource, MessagesLayoutDelegate, Mes
     }
     
     func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
-        return 20
+        return 15
     }
 
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         print("oh nice")
         let name = message.sender.displayName
         print(name)
-        return NSAttributedString(string: name, attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "ACAI_BERRY")])
+        return NSAttributedString(string: name, attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "ACAI_BERRY_50"), NSAttributedString.Key.font: UIFont(name: "Comfortaa-Light", size: 10)])
     }
     
     
@@ -239,8 +248,6 @@ struct KMessage: MessageType{
     var messageId: String
     var sentDate: Date
     var kind: MessageKind
-    
-    
 }
 
 

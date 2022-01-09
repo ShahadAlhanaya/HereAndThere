@@ -36,7 +36,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @IBAction func profileImageButtonPressed(_ sender: UIButton) {
-        
         presentPhotoActionSheet()
     }
     
@@ -49,52 +48,43 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
-    
-    
     func handleRegister(){
-        
         let firstName = firstNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let lastName = lastNameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
-        
-        Auth.auth().createUser(withEmail: email, password: password) {
-            result, error in
-            
-            var errorStr = "something went wrong"
-            if let x = error {
-                let err = x as NSError
+        AuthenticaionModel.createAuthUser(email: email, password: password) {
+        (authResult: Result<AuthDataResult, Error>) in
+            switch authResult {
+            case .success(let result):
+                AuthenticaionModel.currentUserID = result.user.uid
+                FirebaseModel.createFirestoreUser(firstName: firstName, lastName: lastName, email: email, uid: AuthenticaionModel.currentUserID) { (userCreateResult: Result<String, Error>) in
+                    switch userCreateResult {
+                    case .success(_):
+                        self.uploadUserImage()
+                        self.dismissRegister()
+                    case .failure(let error):
+                        print(error.localizedDescription)
+                    }
+                }
+            case .failure(let error):
+                var errorStr = "something went wrong"
+                let err = error as NSError
                 switch err.code {
-                     case AuthErrorCode.wrongPassword.rawValue:
-                        errorStr = "invalid credentials"
-                     case AuthErrorCode.invalidEmail.rawValue:
-                        errorStr = "invalid credentials"
-                     case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
-                        errorStr = "invalid credentials"
-                     case AuthErrorCode.emailAlreadyInUse.rawValue:
-                        errorStr = "email is alreay in use"
-                     default:
-                        print("unknown error: \(err.localizedDescription)")
-                     }
+                case AuthErrorCode.wrongPassword.rawValue:
+                    errorStr = "invalid credentials"
+                case AuthErrorCode.invalidEmail.rawValue:
+                    errorStr = "invalid credentials"
+                case AuthErrorCode.accountExistsWithDifferentCredential.rawValue:
+                    errorStr = "invalid credentials"
+                case AuthErrorCode.emailAlreadyInUse.rawValue:
+                    errorStr = "email is alreay in use"
+                default:
+                    print("unknown error: \(err.localizedDescription)")
+                }
                 self.showError(errorStr)
                 return
-            }
-    
-            
-            guard let uid = result?.user.uid else { return }
-            Firestore.firestore().collection("users").document(uid).setData([
-                "firstName": firstName,
-                "lastName": lastName,
-                "email": email,
-            ]){ error in
-                if let error = error {
-                    print("error \(error)")
-                } else {
-                    print("user created")
-                    self.uploadUserImage(uid: uid)
-                    self.dismissRegister()
-                }
             }
         }
     }
@@ -107,32 +97,19 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
         present(myNavigationController, animated: true)
     }
     
-    func uploadUserImage(uid: String){
-        var imageURL = ""
-        let storageRef = Storage.storage().reference().child("\(uid).png")
-        if let uploadData = self.profileImageView.image?.jpegData(compressionQuality: 0.5){
-            storageRef.putData(uploadData, metadata: nil){
-                (metadata, error) in
-                if let error = error {
-                    print("error \(error)")
-                }else{
-                    storageRef.downloadURL { url, error in
-                        imageURL = url!.absoluteString
-                        Firestore.firestore().collection("users").document(uid).updateData([
-                            "image": imageURL,
-                        ]){ error in
-                            if let error = error {
-                                print("error: \(error)")
-                            }
-                        }
-                    }
-                }
+    func uploadUserImage(){
+        FirebaseModel.uploadUserImage(userID: AuthenticaionModel.currentUserID, image: self.profileImageView.image!) {
+            (imageUploadResult: Result<StorageMetadata, Error>) in
+            switch imageUploadResult {
+            case .success(let result):
+                print("image saved: \(result)")
+            case .failure(let error):
+                print("error in uploading image: \(error)")
             }
         }
     }
     
     func validateFields()-> String?{
-        
         if firstNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || lastNameTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || emailTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == "" || passwordTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) == ""
         {
             return "All Fields are required"
@@ -147,7 +124,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
         if Utilities.isValidPassword(cleanedPassword) == false {
             return "Password should be at least 8 characters and contains: \n1 upper case letter \n1 lower case letter \n1 number"
         }
-        
         return nil
     }
     
@@ -175,7 +151,6 @@ class RegisterViewController: UIViewController, UINavigationControllerDelegate {
 extension RegisterViewController: UIImagePickerControllerDelegate {
   
     func presentPhotoActionSheet(){
-        print("hey!")
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
         vc.delegate = self
@@ -189,8 +164,6 @@ extension RegisterViewController: UIImagePickerControllerDelegate {
         picker.dismiss(animated: true, completion: nil)
         guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {return}
         self.profileImageView.image = selectedImage
-        
-        
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -198,15 +171,4 @@ extension RegisterViewController: UIImagePickerControllerDelegate {
     }
 
 }
-extension UITextField {
-    func setLeftPaddingPoints(_ amount:CGFloat){
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.leftView = paddingView
-        self.leftViewMode = .always
-    }
-    func setRightPaddingPoints(_ amount:CGFloat) {
-        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: amount, height: self.frame.size.height))
-        self.rightView = paddingView
-        self.rightViewMode = .always
-    }
-}
+
